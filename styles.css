@@ -1,0 +1,362 @@
+/* Base Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* Checkbox Hack base variables */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --text-muted: #666666;
+  --primary-color: #8b0000; /* Dark Red */
+  --primary-hover: #b30000;
+  --card-bg: #f9f9f9;
+  --border-color: #dddddd;
+  --nav-bg: #8b0000;
+  --nav-text: #ffffff;
+  --radius: 8px;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide the checkbox */
+.dark-mode-checkbox {
+  display: none;
+}
+
+/* Dark Mode Variables applying when checkbox is checked */
+#dark-mode-toggle:checked ~ .theme-wrapper {
+  --bg-color: #121212;
+  --text-color: #f4f4f4;
+  --text-muted: #bbbbbb;
+  --primary-color: #ff4d4d; /* Lighter red for visibility */
+  --primary-hover: #ff6666;
+  --card-bg: #1e1e1e;
+  --border-color: #333333;
+  --nav-bg: #111111;
+  --nav-text: #ff4d4d;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Theme Wrapper */
+.theme-wrapper {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Dark Mode Toggle Switch Styling */
+.dark-mode-label {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 32px;
+  background-color: #ccc;
+  border-radius: 16px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.3s;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+}
+
+.dark-mode-label .toggle-ball {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+#dark-mode-toggle:checked ~ .theme-wrapper .dark-mode-label {
+  background-color: var(--primary-color);
+}
+
+#dark-mode-toggle:checked ~ .theme-wrapper .dark-mode-label .toggle-ball {
+  transform: translateX(28px);
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 5rem 1rem 3rem;
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+header h1 {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  letter-spacing: -1px;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  background-color: var(--nav-bg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+
+nav a {
+  color: var(--nav-text);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+#dark-mode-toggle:checked ~ .theme-wrapper nav a:hover {
+  background-color: rgba(255, 77, 77, 0.15);
+}
+
+/* Main Content */
+main {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  width: 100%;
+}
+
+section {
+  margin-bottom: 5rem;
+  padding-top: 2rem; /* offset for sticky nav if clicking anchor */
+}
+
+h2 {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--primary-color);
+  margin: 0.75rem auto 0;
+  border-radius: 2px;
+}
+
+/* About Me */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.profile-img {
+  border-radius: 50%;
+  border: 4px solid var(--primary-color);
+  box-shadow: var(--shadow);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  width: 180px;
+  height: 180px;
+}
+
+.profile-img:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.about-content p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  color: var(--text-muted);
+}
+
+/* Skills */
+.skills-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 1.25rem;
+}
+
+.skills-list li {
+  background-color: var(--card-bg);
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.skills-list li:hover {
+  transform: translateY(-4px);
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* Projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+.project-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+#dark-mode-toggle:checked ~ .theme-wrapper .project-card:hover {
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.7);
+}
+
+.project-card h3 {
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.project-card p {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-links a {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+  transition: background-color 0.2s, transform 0.2s;
+  flex: 1;
+}
+
+.project-links a:hover {
+  background-color: var(--primary-hover);
+  transform: scale(1.02);
+}
+
+/* Contact Section */
+.contact-card {
+  background-color: var(--card-bg);
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.contact-card p {
+  margin-bottom: 1.2rem;
+  font-size: 1.15rem;
+  color: var(--text-muted);
+}
+
+.contact-card a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+  color: var(--primary-hover);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--card-bg);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  header {
+    padding-top: 4rem;
+  }
+  
+  header h1 {
+    font-size: 2.2rem;
+  }
+  
+  nav {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dark-mode-label {
+    top: 15px;
+    right: 15px;
+  }
+}

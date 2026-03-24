@@ -1,146 +1,175 @@
-
-<doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My HTML Portfolio</title>
+    <!-- Linked external CSS -->
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Header section -->
-    <header>
-      <h1 title="My name">Lexter L. lampas</h1>
-      <p>Aspiring web developer | HTML | CSS | JavaScript</p>
-    </header>
-    <hr />
-    <nav>
-      <a href="#AboutMeId"> About</a> | <a href="#skillsId"> Skills</a> |
-      <a href="#projectsId"> Projects</a> | <a href="#ContactId"> Contact</a> 
-    </nav>
-    <hr />
-    <!-- About Me Section -->
-    <section id="AboutMeId">
-      <h2>About Me</h2>
-      <img
-        src="/images/IMG_20260103_212334_897.jpg"
-        alt="profile picture"
-        width="150"
-      />
-      <p>I am a student learning Web Development.</p>
-    </section>
-    <hr />
+    <!-- Checkbox Hack for Dark Mode -->
+    <input type="checkbox" id="dark-mode-toggle" class="dark-mode-checkbox" />
+    
+    <div class="theme-wrapper">
+      <!-- Dark Mode Toggle Switch -->
+      <label for="dark-mode-toggle" class="dark-mode-label" title="Toggle Dark/Light Mode">
+        <span class="toggle-ball"></span>
+      </label>
 
-    <!-- Skills Section -->
-    <section id="skillsId">
-      <h2>Skills</h2>
-      <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-      </ul>
-      <hr />
-    </section>
-    <!-- Projects Section -->
-    <section id="projectsId">
-      <h2>My Projects</h2>
-      <article>
-        <h3>Project 1: Personal Portfolio Website</h3>
-        <p>A personal portfolio website showcasing my skills and projects using HTML, CSS, and JavaScript.</p>
-        <a href="https://github.com/Lek1509/My-HTML-portfolio" target="_blank">GitHub Link</a>
-        <a href="https://my-html-portfolio-lampaslexter.vercel.app/" target="_blank">View Project</a>
-    </article>
+      <!-- Header section -->
+      <header>
+        <h1 title="My name">Lexter L. Lampas</h1>
+        <p>Aspiring web developer | HTML | CSS | JavaScript</p>
+      </header>
+      
+      <!-- Navigation -->
+      <nav>
+        <a href="#AboutMeId">About</a>
+        <a href="#skillsId">Skills</a>
+        <a href="#projectsId">Projects</a>
+        <a href="#ContactId">Contact</a>
+      </nav>
 
-    <article>
-        <h3>Project 2: First HTML Project</h3>
-        <p>A responsive web design project that adapts to different screen sizes and devices using HTML and CSS media queries.</p>
-        <p>
-            <a href="https://github.com/Lek1509/first-html-project" target="_blank">GitHub Link</a> |
-            <a href="https://first-html-project-one.vercel.app/" target="_blank">View Project</a>
-        </p>
-    </article>
+      <main>
+        <!-- About Me Section -->
+        <section id="AboutMeId">
+          <h2>About Me</h2>
+          <div class="about-content">
+            <img 
+               src="/images/IMG_20260103_212334_897.jpg" 
+               alt="profile picture" 
+               class="profile-img"
+            />
+            <p>I am a student learning Web Development.</p>
+          </div>
+        </section>
 
-    <article>
-        <h3>Project 3: HTML User Account Creation</h3>
-        <p>A simple user account creation form using HTML</p>
-        <p>
-        <a href="https://github.com/Lek1509/html-user-account-creation-Lampas_Lexter" target="_blank">GitHub Link</a> |
-        <a href="https://html-user-account-creation-lampas-l.vercel.app/" target="_blank">View Project</a>
-        </p>
-    </article>
+        <!-- Skills Section -->
+        <section id="skillsId">
+          <h2>Skills</h2>
+          <ul class="skills-list">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+        </section>
 
-    <article>
-        <h3>Project 4: HTML Iframe</h3>
-        <p>A project demonstrating the use of HTML iframe elements to embed external content within a webpage.</p>
-        <p>
-        <a href="https://github.com/Lek1509/html-IT-portal-iframe_Lampas_Lexter" target="_blank">GitHub Link</a> |
-        <a href="https://html-it-portal-iframe-lampas-lexter.vercel.app/" target="_blank">View Project</a>
-        </p>
-    </article>
+        <!-- Projects Section -->
+        <section id="projectsId">
+          <h2>My Projects</h2>
+          <div class="projects-grid">
+            <article class="project-card">
+              <h3>Project 1: Personal Portfolio Website</h3>
+              <p>A personal portfolio website showcasing my skills and projects using HTML, CSS, and JavaScript.</p>
+              <div class="project-links">
+                <a href="https://github.com/Lek1509/My-HTML-portfolio" target="_blank">GitHub Link</a>
+                <a href="https://my-html-portfolio-lampaslexter.vercel.app/" target="_blank">View Project</a>
+              </div>
+            </article>
 
-    <article>
-        <h3>Project 5: HTML Student Registration Form</h3>
-        <p>A student registration form created using HTML, allowing users to input their information for enrollment purposes.</p>
-        <p>
-          <a href="https://github.com/Lek1509/html-student-registration-form-lampas-lexter" target="_blank">GitHub Link</a> |
-          <a href="https://html-student-registration-form-lamp.vercel.app/" target="_blank">View Project</a>
-        </p>
-    </article>
+            <article class="project-card">
+              <h3>Project 2: First HTML Project</h3>
+              <p>A responsive web design project that adapts to different screen sizes and devices using HTML and CSS media queries.</p>
+              <div class="project-links">
+                <a href="https://github.com/Lek1509/first-html-project" target="_blank">GitHub Link</a>
+                <a href="https://first-html-project-one.vercel.app/" target="_blank">View Project</a>
+              </div>
+            </article>
 
-    <article>
-        <h3>Project 6: Demo in Video and Background music</h3>
-        <p>A project demonstrating the use of HTML video and background music elements in a webpage.</p>
-        <p>
-        <a href="https://github.com/Lek1509/html-itproject-demo-lampas_lexter" target="_blank">GitHub Link</a>  |
-        <a href="https://html-itproject-demo-lampas-lexter.vercel.app/" target="_blank" >View Project</a>
+            <article class="project-card">
+              <h3>Project 3: HTML User Account Creation</h3>
+              <p>A simple user account creation form using HTML</p>
+              <div class="project-links">
+                <a href="https://github.com/Lek1509/html-user-account-creation-Lampas_Lexter" target="_blank">GitHub Link</a>
+                <a href="https://html-user-account-creation-lampas-l.vercel.app/" target="_blank">View Project</a>
+              </div>
+            </article>
 
-    </article>
+            <article class="project-card">
+              <h3>Project 4: HTML Iframe</h3>
+              <p>A project demonstrating the use of HTML iframe elements to embed external content within a webpage.</p>
+              <div class="project-links">
+                <a href="https://github.com/Lek1509/html-IT-portal-iframe_Lampas_Lexter" target="_blank">GitHub Link</a>
+                <a href="https://html-it-portal-iframe-lampas-lexter.vercel.app/" target="_blank">View Project</a>
+              </div>
+            </article>
 
-    <article>
-        <h3>Project 7: HTML Webpage with Audio</h3>
-        <p>A project showcasing the integration of audio elements in an HTML webpage, allowing users to play and control audio content.</p>
-        <p>
-        <a href="https://github.com/Lek1509/html-study-playlist-lampas-lexter" target="_blank">GitHub Link</a> |
-        <a href="https://html-study-playlist-lampas-lexter.vercel.app/" target="_blank">View Project</a>
-        </p>
-    </article>
+            <article class="project-card">
+              <h3>Project 5: HTML Student Registration Form</h3>
+              <p>A student registration form created using HTML, allowing users to input their information for enrollment purposes.</p>
+              <div class="project-links">
+                <a href="https://github.com/Lek1509/html-student-registration-form-lampas-lexter" target="_blank">GitHub Link</a>
+                <a href="https://html-student-registration-form-lamp.vercel.app/" target="_blank">View Project</a>
+              </div>
+            </article>
 
-    <article>
-        <h3>Project 8: HTML Webpage Table</h3>
-        <p>A project demonstrating the use of table elements in an HTML webpage, allowing users to view structured data in a tabular format.</p>
-        <p>
-        <a href="https://github.com/Lek1509/html-IT-students-schedule-lampas-lexter" target="_blank">GitHub Link</a> |
-        <a href="https://html-it-students-schedule-lampas-le.vercel.app/" target="_blank">View Project</a>
-        </p>
-    </article>
-    <article>
-      <h3>Certification Project:Survey Form</h3>
-      <p>
-      <a href="https://github.com/Lek1509/html-Certification-Project-Survey-form_Lampas-Lexter" target="_blank">GitHub Link</a> |
-      <a href="https://html-certification-project-survey-f.vercel.app/" target="_blank">View Project</a>
-      </p>
-  </article>
-  <article>
-    <h3>Certification Project:Playing Cards</h3>
-    <p>
-    <a href="https://github.com/Lek1509/html-CertificationProject-Playing-Cards_Lampas_lexter" target="_blank">GitHub Link</a> |
-    <a href="https://html-certification-project-playing.vercel.app/" target="_blank">View Project</a>
-    </p>
-</article>
-    <hr />
-    <!-- Contact Section -->
-    <section id="ContactId">
-      <h2>Contact Me</h2>
-      <p>Mobile Number: <strong>09683261959</strong></p>
-      <p>
-        Email:
-        <strong>
-          <a href="Mailto:Lexterlampas@gmail.com">lexterlampas@gmail.com</a>
-        </strong>
-      </p>
-    </section>
-    <hr />
-    <!-- Footer Section -->
-    <footer>&copy; 2006 Lexter L. Lampas</footer>
-    <hr />
+            <article class="project-card">
+              <h3>Project 6: Demo in Video and Background music</h3>
+              <p>A project demonstrating the use of HTML video and background music elements in a webpage.</p>
+              <div class="project-links">
+                <a href="https://github.com/Lek1509/html-itproject-demo-lampas_lexter" target="_blank">GitHub Link</a>
+                <a href="https://html-itproject-demo-lampas-lexter.vercel.app/" target="_blank">View Project</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <h3>Project 7: HTML Webpage with Audio</h3>
+              <p>A project showcasing the integration of audio elements in an HTML webpage, allowing users to play and control audio content.</p>
+              <div class="project-links">
+                <a href="https://github.com/Lek1509/html-study-playlist-lampas-lexter" target="_blank">GitHub Link</a>
+                <a href="https://html-study-playlist-lampas-lexter.vercel.app/" target="_blank">View Project</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <h3>Project 8: HTML Webpage Table</h3>
+              <p>A project demonstrating the use of table elements in an HTML webpage, allowing users to view structured data in a tabular format.</p>
+              <div class="project-links">
+                <a href="https://github.com/Lek1509/html-IT-students-schedule-lampas-lexter" target="_blank">GitHub Link</a>
+                <a href="https://html-it-students-schedule-lampas-le.vercel.app/" target="_blank">View Project</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <h3>Certification Project: Survey Form</h3>
+              <p>A project demonstrating a functional survey form using HTML elements.</p>
+              <div class="project-links">
+                <a href="https://github.com/Lek1509/html-Certification-Project-Survey-form_Lampas-Lexter" target="_blank">GitHub Link</a>
+                <a href="https://html-certification-project-survey-f.vercel.app/" target="_blank">View Project</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <h3>Certification Project: Playing Cards</h3>
+              <p>A project building playing cards layout using HTML and CSS styling.</p>
+              <div class="project-links">
+                <a href="https://github.com/Lek1509/html-CertificationProject-Playing-Cards_Lampas_lexter" target="_blank">GitHub Link</a>
+                <a href="https://html-certification-project-playing.vercel.app/" target="_blank">View Project</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="ContactId">
+          <h2>Contact Me</h2>
+          <div class="contact-card">
+            <p>Mobile Number: <strong>09683261959</strong></p>
+            <p>
+              Email:
+              <strong>
+                <a href="mailto:Lexterlampas@gmail.com">lexterlampas@gmail.com</a>
+              </strong>
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer Section -->
+      <footer>
+        <p>&copy; 2006 Lexter L. Lampas</p>
+      </footer>
+    </div>
   </body>
 </html>
